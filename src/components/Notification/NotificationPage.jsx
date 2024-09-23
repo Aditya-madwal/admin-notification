@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import image from "../assets/notify.svg";
-import image2 from "../assets/trash-empty.svg";
-import image3 from "../assets/sort.svg";
+import image from "../../assets/notify.svg";
+import image2 from "../../assets/trash-empty.svg";
+import image3 from "../../assets/sort.svg";
 
 const NotificationPage = () => {
   const [activeTab, setActiveTab] = useState("Farmer");
@@ -133,7 +133,7 @@ const NotificationPage = () => {
                       </div>
                     </div>
                     <button className="text-red-500">
-                      <img src={image2} alt="delete" />
+                      <img src={image2} alt="delete" className="h-6 w-6" />
                     </button>
                   </div>
                   <div>

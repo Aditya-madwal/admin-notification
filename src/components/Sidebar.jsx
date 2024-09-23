@@ -5,8 +5,10 @@ import SimpleBar from "simplebar-react";
 import "simplebar-react/dist/simplebar.min.css";
 import { sidebarStructure } from "./structure";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Sidebar = ({ setExpand, email }) => {
+  const navigate = useNavigate();
   const username = email.toUpperCase();
   const company = "VGFA";
   const profilePic =
@@ -190,14 +192,18 @@ const Sidebar = ({ setExpand, email }) => {
           role="button"
           tabIndex={0}
           id={item.id}
+          // onClick={() => {
+          //   if ("child" in item) {
+          //     handleToggle(item.name);
+          //   } else if ("link" in item) {
+          //     handleNavigate(item.name);
+          //   } else {
+          //     toast.info("Comming Soon!!");
+          //   }
+          // }}
           onClick={() => {
-            if ("child" in item) {
-              handleToggle(item.name);
-            } else if ("link" in item) {
-              handleNavigate(item.name);
-            } else {
-              toast.info("Comming Soon!!");
-            }
+            navigate(item.link);
+            handleNavigate(item.name)
           }}
           onKeyDown={(event) => {
             const { code } = event;

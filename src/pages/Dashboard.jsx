@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
-import NotificationPage from "../components/NotificationPage";
+import NotificationPage from "../components/Notification/NotificationPage";
 import CreateNotification from "../components/CreateNotification";
-import NotificationManage from "../components/NotificationManage";
-import { useNavigate } from "react-router-dom";
+import NotificationManage from "../components/Notification/NotificationManage";
+import { Outlet, useNavigate } from "react-router-dom";
 import SuccessModal from "../components/SuccessModal";
 
 const myHeaders = new Headers();
@@ -15,19 +15,9 @@ myHeaders.append(
 const baseUrl = "https://vfgabackend.outhad.com/api/";
 
 function Dashboard() {
-  const [showModal, setShowModal] = useState(false);
   const [sideMenuIsExpand, setSideMenuIsExpand] = useState(true);
   const [email, setEmail] = useState("");
-  const [activeComponent, setActiveComponent] = useState("CreateNotification"); // default to ManageNotification
   const navigate = useNavigate();
-  const showSuccessModal = () => {
-    setShowModal(true);
-  };
-
-  // Function to close modal
-  const closeModal = () => {
-    setShowModal(false);
-  };
 
   useEffect(() => {
     checkLogin();
@@ -72,14 +62,7 @@ function Dashboard() {
           <div className="flex min-h-full flex-1 flex-col justify-center px-20 py-12 lg:px-[2rem] items-center lg:pl-0">
             <div className="flex min-h-full gap-10">
               <div className="mt-10 sm:mx-auto sm:w-full flex gap-5">
-                <NotificationManage setActiveComponent={setActiveComponent} />
-                <div>
-                  {activeComponent === "CreateNotification" ? (
-                    <CreateNotification showSuccessModal={showSuccessModal} />
-                  ) : (
-                    <NotificationPage />
-                  )}
-                </div>
+                <Outlet />
               </div>
             </div>
           </div>
@@ -87,7 +70,7 @@ function Dashboard() {
           {/* Render either CreateNotification or NotificationPage based on the active component */}
         </div>
       </div>
-      <SuccessModal showModal={showModal} onClose={closeModal} />
+      {/* <SuccessModal showModal={showModal} onClose={closeModal} /> */}
     </div>
   );
 }

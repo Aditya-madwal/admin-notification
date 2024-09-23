@@ -9,7 +9,7 @@ const NotificationManage = ({ setActiveComponent }) => {
   };
 
   return (
-    <div className="w-[20vw] h-40 rounded-xl border-[#EDEDED] border-[1.5px] bg-white manage">
+    <div className="w-[20vw] h-40 rounded-xl border-[#EDEDED] border-[1.5px] bg-white notify">
       <p className="p-5 text-lg font-bold font-poppins">
         Notification Management
       </p>

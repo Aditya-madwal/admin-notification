@@ -165,8 +165,11 @@ body {
   align-items: center;
   gap: 5px;
 }
-@media(max-width:1305px){
-  .manage{
+@media (max-width: 1305px) {
+  .notify {
     min-height: 13rem;
+  }
+  .cycle {
+    min-height: 11rem;
   }
 }
