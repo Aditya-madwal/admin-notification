@@ -3,7 +3,7 @@ import trashIcon from "../../assets/trash-empty.svg";
 import sortIcon from "../../assets/sort.svg";
 import editIcon from "../../assets/edit.svg";
 import addUser from "../../assets/add.svg";
-import filter from "../../assets/filter.svg";
+import filter from "../../assets/Filter.svg";
 import search from "../../assets/search.svg";
 
 const CurrentDatabase = () => {
