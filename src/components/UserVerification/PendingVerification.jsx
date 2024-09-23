@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import sortIcon from "../../assets/sort.svg";
 import addUser from "../../assets/add.svg";
-import filter from "../../assets/filter.svg";
+import filter from "../../assets/Filter.svg";
 import search from "../../assets/search.svg";
 import userIcon from "../../assets/notify.svg";
 
